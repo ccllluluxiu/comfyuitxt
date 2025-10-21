@@ -20,7 +20,7 @@ class MyPlugin(Star):
         """这是一个 txt-img 指令"""
         user_name = event.get_sender_name()
         message_str = event.message_str
-        message_str = message_str.split("/comfyuitxt ")
+        message_str = message_str.split("omfyuitxt ")
         logger.info(f"{user_name}==收到文生图请求: {message_str}")
         positive = message_str[1]
         #构造json 工作流
