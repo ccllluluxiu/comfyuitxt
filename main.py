@@ -19,9 +19,10 @@ class MyPlugin(Star):
     async def comfyuitxt(self, event: AstrMessageEvent):
         """这是一个 txt-img 指令"""
         user_name = event.get_sender_name()
-        message_str = event.message_str.split("/comfyuitxt")
+        message_str = event.message_str
+        message_str = message_str.split("/comfyuitxt ")
         logger.info(f"{user_name}==收到文生图请求: {message_str}")
-        positive = message_str[0]
+        positive = message_str[1]
         #构造json 工作流
         # prompt = json.load(open('/AstrBot/data/plugins/comfyuitxt/sd15.json', encoding='utf-8'))
         # prompt["3"]["inputs"]["text"] = "1girl, blue eyes, blue hair, blue dress"
