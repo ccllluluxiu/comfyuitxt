@@ -7,7 +7,7 @@ import random
 import time
 import requests
 
-@register("comfyuitxtimg", "cc", "一个简单的 comfyui 插件", "1.1")
+@register("comfyuitxtimg", "cc", "一个简单的 comfyui 插件", "1.2")
 class MyPlugin(Star):
     def __init__(self, context: Context):
         super().__init__(context)
