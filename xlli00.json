@@ -1,0 +1,185 @@
+{
+  "1": {
+    "inputs": {
+      "ckpt_name": "Illustrious\\waiNSFWIllustrious_v140.safetensors",
+      "vae_name": "Baked VAE",
+      "clip_skip": -2,
+      "lora_name": "None",
+      "lora_model_strength": 0.7,
+      "lora_clip_strength": 0.4,
+      "positive": [
+        "9",
+        0
+      ],
+      "negative": "nsfw,pussy,penis,nipples",
+      "token_normalization": "none",
+      "weight_interpretation": "A1111",
+      "empty_latent_width": 1024,
+      "empty_latent_height": 1024,
+      "batch_size": 1,
+      "lora_stack": [
+        "5",
+        0
+      ]
+    },
+    "class_type": "Efficient Loader",
+    "_meta": {
+      "title": "效率加载器"
+    }
+  },
+  "2": {
+    "inputs": {
+      "seed": 721542260815121,
+      "steps": 15,
+      "cfg": 5.5,
+      "sampler_name": "euler_ancestral",
+      "scheduler": "normal",
+      "denoise": 1,
+      "preview_method": "none",
+      "vae_decode": "true",
+      "model": [
+        "1",
+        0
+      ],
+      "positive": [
+        "1",
+        1
+      ],
+      "negative": [
+        "1",
+        2
+      ],
+      "latent_image": [
+        "1",
+        3
+      ],
+      "optional_vae": [
+        "1",
+        4
+      ]
+    },
+    "class_type": "KSampler (Efficient)",
+    "_meta": {
+      "title": "K采样器(效率)"
+    }
+  },
+  "4": {
+    "inputs": {
+      "filename_prefix": "asb",
+      "images": [
+        "2",
+        5
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "保存图像"
+    }
+  },
+  "5": {
+    "inputs": {
+      "toggle": false,
+      "mode": "simple",
+      "num_loras": 1,
+      "lora_1_name": "NoobAI\\nyalialike-NAI-VPREDV408.safetensors",
+      "lora_1_strength": 0.5,
+      "lora_1_model_strength": 1,
+      "lora_1_clip_strength": 1,
+      "lora_2_name": "None",
+      "lora_2_strength": 0.47,
+      "lora_2_model_strength": 1,
+      "lora_2_clip_strength": 1,
+      "lora_3_name": "None",
+      "lora_3_strength": 0.5,
+      "lora_3_model_strength": 1,
+      "lora_3_clip_strength": 1,
+      "lora_4_name": "None",
+      "lora_4_strength": 0.5,
+      "lora_4_model_strength": 1,
+      "lora_4_clip_strength": 1,
+      "lora_5_name": "None",
+      "lora_5_strength": 1,
+      "lora_5_model_strength": 1,
+      "lora_5_clip_strength": 1,
+      "lora_6_name": "None",
+      "lora_6_strength": 1,
+      "lora_6_model_strength": 1,
+      "lora_6_clip_strength": 1,
+      "lora_7_name": "None",
+      "lora_7_strength": 1,
+      "lora_7_model_strength": 1,
+      "lora_7_clip_strength": 1,
+      "lora_8_name": "None",
+      "lora_8_strength": 1,
+      "lora_8_model_strength": 1,
+      "lora_8_clip_strength": 1,
+      "lora_9_name": "None",
+      "lora_9_strength": 1,
+      "lora_9_model_strength": 1,
+      "lora_9_clip_strength": 1,
+      "lora_10_name": "None",
+      "lora_10_strength": 1,
+      "lora_10_model_strength": 1,
+      "lora_10_clip_strength": 1
+    },
+    "class_type": "easy loraStack",
+    "_meta": {
+      "title": "简易Lora堆"
+    }
+  },
+  "8": {
+    "inputs": {
+      "text": "女孩,绿眼睛，蓝头发，毛衣"
+    },
+    "class_type": "Text Multiline",
+    "_meta": {
+      "title": "多行文本"
+    }
+  },
+  "9": {
+    "inputs": {
+      "delimiter": ",",
+      "string1": [
+        "10",
+        0
+      ],
+      "string2": [
+        "12",
+        0
+      ]
+    },
+    "class_type": "JoinStrings",
+    "_meta": {
+      "title": "合并字符串"
+    }
+  },
+  "10": {
+    "inputs": {
+      "text": "masterpiece,\n"
+    },
+    "class_type": "Text Multiline",
+    "_meta": {
+      "title": "多行文本"
+    }
+  },
+  "12": {
+    "inputs": {
+      "from_translate": "chinese simplified",
+      "to_translate": "english",
+      "add_proxies": false,
+      "proxies": "",
+      "auth_data": "",
+      "service": "MyMemoryTranslator [free]",
+      "text": [
+        "8",
+        0
+      ],
+      "Show proxy": "proxy_hide",
+      "Show authorization": "authorization_hide"
+    },
+    "class_type": "DeepTranslatorTextNode",
+    "_meta": {
+      "title": "翻译文本(高级)"
+    }
+  }
+}
