@@ -89,7 +89,7 @@ class MyPlugin(Star):
         #构造json 工作流
         # prompt = json.load(open('/AstrBot/data/plugins/comfyuitxt/sd15.json', encoding='utf-8'))
         # prompt["3"]["inputs"]["text"] = "1girl, blue eyes, blue hair, blue dress"
-        prompt = json.load(open('/AstrBot/data/plugins/comfyuitxt/xlli00.json.json', encoding='utf-8'))
+        prompt = json.load(open('/AstrBot/data/plugins/comfyuitxt/xlli00.json', encoding='utf-8'))
         prompt["8"]["inputs"]["text"] = positive
         prompt["2"]["inputs"]["seed"] = random.randint(1, 9999999)
         url = self.comfyui_api_url
