@@ -7,7 +7,7 @@ import random
 import time
 import requests
 
-@register("comfyuitxtimg", "cc", "一个简单的 comfyui 插件", "1.3")
+@register("comfyuitxtimg", "cc", "一个简单的 comfyui 插件", "1.3.1")
 class MyPlugin(Star):
     def __init__(self, context: Context):
         super().__init__(context)
@@ -15,14 +15,22 @@ class MyPlugin(Star):
         self.comfyui_api_url = "http://38.55.205.201:12347/"  # 默认本地地址，可根据实际情况修改
         
     # 注册指令的装饰器。指令名为 comfyui。注册成功后，发送 `/comfyuitxt` 就会触发这个指令
-    @filter.command("comfyuitxt15")
-    async def comfyuitxt(self, event: AstrMessageEvent):
+    # @filter.command("comfyuitxt")
+    @filter.command_group("comfyuitxt")
+    def comfyuitxt():
+        pass
+    @comfyuitxt.group("calc") # 请注意，这里是 group，而不是 command_group
+    def calc():
+        pass
+    @calc.command("sd15")
+    async def sd15(self, event: AstrMessageEvent,positive: str):
         """这是一个 txt-img 指令"""
-        user_name = event.get_sender_name()
-        message_str = event.message_str
-        message_str = message_str.split("omfyuitxt15")
-        logger.info(message_str)
-        positive = message_str[1]
+        # user_name = event.get_sender_name()
+        # message_str = event.message_str
+        # message_str = message_str.split("omfyuitxt15")
+        # logger.info(message_str)
+        # positive = message_str[1]
+        logger.info(positive)
         #构造json 工作流
         # prompt = json.load(open('/AstrBot/data/plugins/comfyuitxt/sd15.json', encoding='utf-8'))
         # prompt["3"]["inputs"]["text"] = "1girl, blue eyes, blue hair, blue dress"
@@ -68,14 +76,16 @@ class MyPlugin(Star):
 
         else:
              yield event.plain_result("失败哩，嘻嘻")
-    @filter.command("comfyuitxtil")
-    async def comfyuitxt(self, event: AstrMessageEvent):
+    @calc.command("xlil")
+    async def xlil(self, event: AstrMessageEvent,positive: str):
         """这是一个 txt-img 指令"""
-        user_name = event.get_sender_name()
-        message_str = event.message_str
-        message_str = message_str.split("omfyuitxtil")
-        logger.info(message_str)
-        positive = message_str[1]
+        # user_name = event.get_sender_name()
+        # message_str = event.message_str
+        # message_str = message_str.split("omfyuitxtil")
+        # logger.info(message_str)
+        # positive = message_str[1]
+        positive = (positive)
+        logger.info(positive)
         #构造json 工作流
         # prompt = json.load(open('/AstrBot/data/plugins/comfyuitxt/sd15.json', encoding='utf-8'))
         # prompt["3"]["inputs"]["text"] = "1girl, blue eyes, blue hair, blue dress"
