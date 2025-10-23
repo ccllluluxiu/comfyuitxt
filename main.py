@@ -7,7 +7,7 @@ import random
 import time
 import requests
 
-@register("comfyuitxtimg", "cc", "一个简单的 comfyui 插件", "1.3.1")
+@register("comfyuitxtimg", "cc", "一个简单的 comfyui 插件", "1.3.2")
 class MyPlugin(Star):
     def __init__(self, context: Context):
         super().__init__(context)
@@ -23,13 +23,13 @@ class MyPlugin(Star):
     def calc():
         pass
     @calc.command("sd15")
-    async def sd15(self, event: AstrMessageEvent,positive: str):
+    async def sd15(self, event: AstrMessageEvent):
         """这是一个 txt-img 指令"""
         # user_name = event.get_sender_name()
-        # message_str = event.message_str
-        # message_str = message_str.split("omfyuitxt15")
+        message_str = event.message_str
+        message_str = message_str.split("omfyuitxt calc sd15")
         # logger.info(message_str)
-        # positive = message_str[1]
+        positive = message_str[1]
         logger.info(positive)
         #构造json 工作流
         # prompt = json.load(open('/AstrBot/data/plugins/comfyuitxt/sd15.json', encoding='utf-8'))
@@ -77,13 +77,13 @@ class MyPlugin(Star):
         else:
              yield event.plain_result("失败哩，嘻嘻")
     @calc.command("xlil")
-    async def xlil(self, event: AstrMessageEvent,positive: str):
+    async def xlil(self, event: AstrMessageEvent):
         """这是一个 txt-img 指令"""
         # user_name = event.get_sender_name()
-        # message_str = event.message_str
-        # message_str = message_str.split("omfyuitxtil")
+        message_str = event.message_str
+        message_str = message_str.split("omfyuitxt calc xlil")
         # logger.info(message_str)
-        # positive = message_str[1]
+        positive = message_str[1]
         positive = (positive)
         logger.info(positive)
         #构造json 工作流
