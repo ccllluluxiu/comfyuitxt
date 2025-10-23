@@ -84,7 +84,6 @@ class MyPlugin(Star):
         message_str = message_str.split("omfyuitxt calc xlil")
         # logger.info(message_str)
         positive = message_str[1]
-        positive = (positive)
         logger.info(positive)
         #构造json 工作流
         # prompt = json.load(open('/AstrBot/data/plugins/comfyuitxt/sd15.json', encoding='utf-8'))
